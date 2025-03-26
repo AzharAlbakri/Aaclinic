@@ -101,7 +101,7 @@ function loadSectionsStatic() {
               // إضافة قسم جديد
               const sectionItem = `
                   <li class="nav-item dropdown">
-                      <a class="nav-link text-white menu-link" href="#" role="button" id="navbarDropdown" aria-expanded="false" data-i18n="${section.i18next}">
+                      <a class="section-link nav-link text-white menu-link" href="#" data-section-id="${section.sectionId}" role="button" id="navbarDropdown" aria-expanded="false" data-i18n="${section.i18next}">
                           ${sectionTitle}
                       </a>
                       ${categories.length > 0 ? `
@@ -125,6 +125,15 @@ function loadSectionsStatic() {
 
             window.location.href = `${pageName}.html?sectionId=${sectionId}&categoryId=${categoryId}`;
         });
+        $('.section-link').click(function (e) {
+          e.preventDefault();
+          const sectionId = $(this).data('section-id');
+          //window.location.href = `subcategory.html?sectionId=${sectionId}&categoryId=${categoryId}`;
+
+          window.location.href = `categories.html?sectionId=${sectionId}`;
+      });
+
+
       }
   }).fail(function () {
       console.error("Error loading sections.");

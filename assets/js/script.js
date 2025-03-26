@@ -199,17 +199,10 @@ document.querySelector('#appointmentForm').addEventListener('submit', function (
         patient_name: document.querySelector('#patientName').value,
         phone_number: document.querySelector('#phoneNumber').value,
         email: document.querySelector('#email').value,
-        identity_number: document.querySelector('#identityNumber').value,
         appointment_date: document.querySelector('#appointmentDate').value,
         appointment_time: document.querySelector('#appointmentTime').value,
         appointment_reason: document.querySelector('#appointmentReason').value,
-        preferred_doctor: document.querySelector('#preferredDoctor').value,
-        additional_notes: document.querySelector('#additionalNotes').value,
-        has_insurance: document.querySelector('#hasInsurance').checked,
-        insurance_company: document.querySelector('#insuranceCompany').value,
-        insurance_policy_number: document.querySelector('#insurancePolicyNumber').value,
         agree_to_terms: document.querySelector('#agreeToTerms').checked,
-        reminder_method: document.querySelector('#reminderMethod').value,
         // appointment_id: 'ioqd638bJmJv0UGXcGY0'
     };
 

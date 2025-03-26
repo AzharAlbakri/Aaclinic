@@ -162,223 +162,176 @@ style="position: sticky; top: 100px; z-index: 1020;">
     </div>
 </div>
 </nav>
+ <!-- Hero Section -->
+ <section id="sectionHero" class="hero-slider">
+        
 
-    <!-- Hero Section -->
-    <section id="sectionHero" class="hero-slider">
-        <!-- Consultation Form -->
-        <div class="consultation-form">
-            <form id="consultationForm">
-                <h4 data-i18n="consultation_request">Consultation Request</h4>
+    <div class="appointment-form"> 
 
-                <!-- Full Name -->
-                <div class="mb-3">
-                    <label for="fullName" class="form-label" data-i18n="full_name_label">Full Name</label>
-                    <input type="text" id="consultationfullName" name="fullName" class="form-control"
-                        placeholder="Enter your name" required>
+        <!-- Appointment Form Section -->
+        <form id="appointmentForm">
+            <h4 class="text-center mb-4" data-i18n="appointment_schedule">Schedule Your Appointment Now</h2>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="patientName" class="form-label" data-i18n="patient_name">Patient's Name</label>
+                    <input type="text" id="patientName" name="patient_name" class="form-control"
+                        placeholder="Enter patient's name" required>
                 </div>
-
-                <!-- Email and Phone Number in the same row -->
-                <div class="mb-3 row">
-                    <div class="col-md-6">
-                        <label for="email" class="form-label" data-i18n="email_label">Email</label>
-                        <input type="email" id="consultationemail" name="email" class="form-control"
-                            placeholder="example@example.com" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="phone" class="form-label" data-i18n="phone_label">Phone Number</label>
-                        <input type="text" id="consultationphone" name="phone" class="form-control"
-                            placeholder="Enter your phone number" required>
-                    </div>
+                
+                
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="phoneNumber" class="form-label" data-i18n="phone_number">Phone Number</label>
+                    <input type="text" id="phoneNumber" name="phone_number" class="form-control"
+                        placeholder="Enter phone number" required>
                 </div>
-
-                <!-- Contact Method and Consultation Type in the same row -->
-                <div class="mb-3 row">
-                    <div class="col-md-6">
-                        <label for="contactMethod" class="form-label" data-i18n="contact_method_label">Contact
-                            Method</label>
-                        <select id="consultationcontactMethod" name="contactMethod" class="form-select" required>
-                            <option value="email" data-i18n="email_option">Email</option>
-                            <option value="phone" data-i18n="phone_option">Phone</option>
-                            <option value="whatsapp" data-i18n="whatsapp_option">WhatsApp</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="consultationType" class="form-label"
-                            data-i18n="consultation_type_label">Consultation Type</label>
-                        <select id="consultationconsultationType" name="consultationType" class="form-select" required>
-                            <option value="general" data-i18n="general_option">General Consultation</option>
-                            <option value="medical" data-i18n="medical_option">Medical Consultation</option>
-                            <option value="legal" data-i18n="legal_option">Legal Consultation</option>
-                        </select>
-                    </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label" data-i18n="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control"
+                        placeholder="example@example.com" required>
                 </div>
-
-                <!-- Additional Information -->
-                <div class="mb-3">
-                    <label for="additionalInfo" class="form-label" data-i18n="additional_info_label">Additional
-                        Information</label>
-                    <textarea id="consultationadditionalInfo" name="additionalInfo" class="form-control" rows="3"
-                        placeholder="Enter any additional information"></textarea>
+            </div>
+            <div class="row mb-3">
+               
+                <div class="col-md-6">
+                    <label for="appointmentDate" class="form-label" data-i18n="appointment_date">Appointment
+                        Date</label>
+                    <input type="date" id="appointmentDate" name="appointment_date" class="form-control" required>
                 </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary w-100" data-i18n="submit_request">Submit Request</button>
-            </form>
-
-        </div>
-
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active"
-                    style="background-image: url('https://res.cloudinary.com/dheh8ee3r/image/upload/v1738760173/golf_kt4o3t.jpg'); background-size: cover; background-position: center; height: 75vh;">
-                    <div class="carousel-caption text-start text-white">
-                        <h1 data-i18n="carousel_welcome">Welcome to Our Clinic</h1>
-                        <p data-i18n="carousel_description">We offer high-quality medical care in all specialties.</p>
-                        <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
+                <div class="col-md-6">
+                    <label for="appointmentTime" class="form-label" data-i18n="appointment_time">Appointment
+                        Time</label>
+                    <select id="appointmentTime" name="appointment_time" class="form-select" required disabled>
+                        <option value="" data-i18n="select_time">Select time</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <label for="appointmentReason" class="form-label" data-i18n="appointment_reason">Reason for
+                        Appointment</label>
+                    <textarea type="text" id="appointmentReason" name="appointment_reason" class="form-control"
+                        placeholder="Enter reason for appointment" required></textarea>
+                </div>
+            </div>
+           
+            <!-- <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class="form-check">
+                        <input type="checkbox" id="agreeToTerms" name="agree_to_terms" class="form-check-input"
+                            required>
+                        <label for="agreeToTerms" class="form-check-label" data-i18n="agree_terms">I agree to the
+                            terms and conditions</label>
                     </div>
                 </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item"
-                    style="background-image: url('assets/images/tennis.jpg'); background-size: cover; background-position: center; height: 75vh;">
-                    <div class="carousel-caption text-start text-white">
-                        <h1 data-i18n="carousel_best_medical_care">The Best Medical Care</h1>
-                        <p data-i18n="carousel_team_assistance">Our team of doctors is ready to assist you.</p>
-                        <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
-                    </div>
-                </div>
-                <!-- Slide 3 -->
-                <div class="carousel-item"
-                    style="background-image: url('assets/images/yoga.jpg'); background-size: cover; background-position: center; height: 75vh;">
-                    <div class="carousel-caption text-start text-white">
-                        <h1 data-i18n="carousel_comprehensive_sections">Comprehensive Medical Sections</h1>
-                        <p data-i18n="carousel_high_quality_healthcare">High-quality healthcare in a comfortable and
-                            safe environment.</p>
-                        <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
+            </div> -->
+
+
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class="form-check">
+                        <input type="checkbox" id="agreeToTerms" name="agree_to_terms" class="form-check-input" required>
+                        <label for="agreeToTerms" class="form-check-label">
+                            I agree to the
+                            <a href="#" class="text-primary text-decoration-underline" data-bs-toggle="modal" data-bs-target="#termsModal" data-i18n="terms">terms</a>
+                            and
+                            <a href="#" class="text-primary text-decoration-underline" data-bs-toggle="modal" data-bs-target="#conditionsModal" data-i18n="conditions">conditions</a>.
+                        </label>
                     </div>
                 </div>
             </div>
 
-            <!-- Carousel Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </section>
 
-    <!-- Form Section -->
-    <section id="sectionAppointement" class="appointment-form-section py-5">
-        <div class="container">
-            <h2 class="text-center mb-4" data-i18n="appointment_schedule">Schedule Your Appointment Now</h2>
-            <!-- Form -->
-            <form id="appointmentForm" class="bg-light p-4 rounded shadow">
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <label for="patientName" class="form-label" data-i18n="patient_name">Patient's Name</label>
-                        <input type="text" id="patientName" name="patient_name" class="form-control"
-                            placeholder="Enter patient's name" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="phoneNumber" class="form-label" data-i18n="phone_number">Phone Number</label>
-                        <input type="text" id="phoneNumber" name="phone_number" class="form-control"
-                            placeholder="Enter phone number" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="email" class="form-label" data-i18n="email">Email</label>
-                        <input type="email" id="email" name="email" class="form-control"
-                            placeholder="example@example.com" required>
-                    </div>
+
+            <button type="submit" class="btn btn-primary w-100" data-i18n="book_appointment">Book
+                Appointment</button>
+        </form>
+
+
+    </div>
+
+<!-- Modal for Terms -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+<div class="modal-dialog" width="100%" style="max-width: 1000px !important;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- ضع هنا نص الشروط -->
+            Here are the terms of service...
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal for Conditions -->
+<div class="modal fade" id="conditionsModal" tabindex="-1" aria-labelledby="conditionsModalLabel" aria-hidden="true">
+<div class="modal-dialog" width="100%" style="max-width: 1000px !important;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="conditionsModalLabel">Conditions</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <!-- ضع هنا نص الشروط -->
+            Here are the conditions...
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active"
+                style="background-image: url('https://res.cloudinary.com/dheh8ee3r/image/upload/v1738760173/golf_kt4o3t.jpg'); background-size: cover; background-position: center; height: 75vh;">
+                <div class="carousel-caption text-start text-white">
+                    <h1 data-i18n="carousel_welcome">Welcome to Our Clinic</h1>
+                    <p data-i18n="carousel_description">We offer high-quality medical care in all specialties.</p>
+                    <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <label for="identityNumber" class="form-label" data-i18n="identity_number">Identity
-                            Number</label>
-                        <input type="text" id="identityNumber" name="identity_number" class="form-control"
-                            placeholder="Enter identity number" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="appointmentDate" class="form-label" data-i18n="appointment_date">Appointment
-                            Date</label>
-                        <input type="date" id="appointmentDate" name="appointment_date" class="form-control" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="appointmentTime" class="form-label" data-i18n="appointment_time">Appointment
-                            Time</label>
-                        <select id="appointmentTime" name="appointment_time" class="form-select" required disabled>
-                            <option value="" data-i18n="select_time">Select time</option>
-                        </select>
-                    </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item"
+                style="background-image: url('../assets/images/tennis.jpg'); background-size: cover; background-position: center; height: 75vh;">
+                <div class="carousel-caption text-start text-white">
+                    <h1 data-i18n="carousel_best_medical_care">The Best Medical Care</h1>
+                    <p data-i18n="carousel_team_assistance">Our team of doctors is ready to assist you.</p>
+                    <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <label for="appointmentReason" class="form-label" data-i18n="appointment_reason">Reason for
-                            Appointment</label>
-                        <input type="text" id="appointmentReason" name="appointment_reason" class="form-control"
-                            placeholder="Enter reason for appointment" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="preferredDoctor" class="form-label" data-i18n="preferred_doctor">Preferred
-                            Doctor</label>
-                        <input type="text" id="preferredDoctor" name="preferred_doctor" class="form-control"
-                            placeholder="Preferred doctor's name">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="additionalNotes" class="form-label" data-i18n="additional_notes">Additional
-                            Notes</label>
-                        <textarea id="additionalNotes" name="additional_notes" class="form-control" rows="1"
-                            placeholder="Enter your notes"></textarea>
-                    </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item"
+                style="background-image: url('../assets/images/yoga.jpg'); background-size: cover; background-position: center; height: 75vh;">
+                <div class="carousel-caption text-start text-white">
+                    <h1 data-i18n="carousel_comprehensive_sections">Comprehensive Medical Sections</h1>
+                    <p data-i18n="carousel_high_quality_healthcare">High-quality healthcare in a comfortable and
+                        safe environment.</p>
+                    <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <div class="form-check">
-                            <input type="checkbox" id="hasInsurance" name="has_insurance" class="form-check-input">
-                            <label for="hasInsurance" class="form-check-label" data-i18n="insurance_question">Do you
-                                have insurance?</label>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="insuranceCompany" class="form-label" data-i18n="insurance_company">Insurance
-                            Company</label>
-                        <input type="text" id="insuranceCompany" name="insurance_company" class="form-control"
-                            placeholder="Insurance company name">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="insurancePolicyNumber" class="form-label"
-                            data-i18n="insurance_policy_number">Insurance Policy Number</label>
-                        <input type="text" id="insurancePolicyNumber" name="insurance_policy_number"
-                            class="form-control" placeholder="Policy number">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <div class="form-check">
-                            <input type="checkbox" id="agreeToTerms" name="agree_to_terms" class="form-check-input"
-                                required>
-                            <label for="agreeToTerms" class="form-check-label" data-i18n="agree_terms">I agree to the
-                                terms and conditions</label>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="reminderMethod" class="form-label" data-i18n="reminder_method">Reminder
-                            Method</label>
-                        <select id="reminderMethod" name="reminder_method" class="form-select" required>
-                            <option value="email" data-i18n="email_option">Email</option>
-                            <option value="sms" data-i18n="sms_option">SMS</option>
-                        </select>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary w-100" data-i18n="book_appointment">Book
-                    Appointment</button>
-            </form>
+            </div>
         </div>
 
-    </section>
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
 
     <!-- About -->
     <section id="sectionAbout" class="clinic-info py-5">

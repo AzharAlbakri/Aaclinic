@@ -1,0 +1,79 @@
+<!-- Floating Consultation Form -->
+<div id="floating-consultation-form">
+    <div id="form-header">
+        <h5 class="my-0" data-i18n="consultation_request">Consultation Request</h5>
+        <button id="toggle-form">−</button>
+    </div>
+    <div id="form-body">
+        <form id="consultationForm">
+            <!-- Full Name -->
+            <div class="mb-3">
+                <label for="fullName" class="form-label" data-i18n="full_name_label">Full Name</label>
+                <input type="text" id="consultationfullName" name="fullName" class="form-control"
+                    placeholder="Enter your name" required>
+            </div>
+
+            <!-- Email and Phone Number in the same row -->
+            <div class="mb-3 row">
+                <div class="col-md-12">
+                    <label for="email" class="form-label" data-i18n="email_label">Email</label>
+                    <input type="email" id="consultationemail" name="email" class="form-control"
+                        placeholder="example@example.com" required>
+                </div>
+                
+            </div>
+
+            <div class="mb-3 row">
+               
+                <div class="col-md-12">
+                    <label for="phone" class="form-label" data-i18n="phone_label">Phone Number</label>
+                    <input type="text" id="consultationphone" name="phone" class="form-control"
+                        placeholder="Enter your phone number" required>
+                </div>
+            </div>
+
+            <!-- Contact Method and Consultation Type in the same row -->
+            <!-- <div class="mb-3 row">
+                <div class="col-md-6">
+                    <label for="contactMethod" class="form-label" data-i18n="contact_method_label">Contact
+                        Method</label>
+                    <select id="consultationcontactMethod" name="contactMethod" class="form-select" required>
+                        <option value="email" data-i18n="email_option">Email</option>
+                        <option value="phone" data-i18n="phone_option">Phone</option>
+                        <option value="whatsapp" data-i18n="whatsapp_option">WhatsApp</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="consultationType" class="form-label"
+                        data-i18n="consultation_type_label">Consultation Type</label>
+                    <select id="consultationconsultationType" name="consultationType" class="form-select" required>
+                        <option value="general" data-i18n="general_option">General Consultation</option>
+                        <option value="medical" data-i18n="medical_option">Medical Consultation</option>
+                        <option value="legal" data-i18n="legal_option">Legal Consultation</option>
+                    </select>
+                </div>
+            </div> -->
+
+            <!-- Additional Information -->
+            <div class="mb-3">
+                <label for="additionalInfo" class="form-label" data-i18n="additional_info_label">Additional
+                    Information</label>
+                <textarea id="consultationadditionalInfo" name="additionalInfo" class="form-control" rows="3"
+                    placeholder="Enter any additional information"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100" data-i18n="submit_request">Submit Request</button>
+        </form>
+    </div>
+</div>
+
+<script>
+
+$(document).ready(function(){
+    $("#toggle-form").click(function(){
+        $("#floating-consultation-form").toggleClass("minimized");
+        $(this).text($("#floating-consultation-form").hasClass("minimized") ? "+" : "−");
+    });
+});
+</script>

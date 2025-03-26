@@ -39,6 +39,12 @@ button.btn.btn-primary {
   font-weight: 700;
 }
 
+.btn-book-appointment {
+  background: #f77200 !important;
+  border-color: #a34b00 !important;
+  font-weight: 700 !important;
+}
+
 /* a.btn.btn-primary {
   background: #00a791;
   border-color: #039b87;
@@ -89,6 +95,41 @@ a.btn.btn-primary {
   margin-top: 10px;
   border-radius: 6px;
 }
+
+
+.appointment-form {
+  position: absolute;
+  top: 50%;
+  right: 16%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 25%;
+  z-index: 10;
+}
+
+.appointment-form h4 {
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.appointment-form .form-control,
+.appointment-form .form-select {
+  border-radius: 6px;
+}
+
+.appointment-form button {
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+
+
+
+
 
 .carousel-caption {
   bottom: 21.25rem;
@@ -382,3 +423,48 @@ background: #f1f1f100;
   display: block;
 }
 
+img.card-img-top {
+  max-height: 255px !important;
+}
+
+#floating-consultation-form {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 270px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  z-index: 25000;
+}
+
+#form-header {
+  background: #43a047;
+  color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#form-header button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+#form-body {
+  padding: 15px;
+}
+
+#floating-consultation-form.minimized #form-body {
+  display: none;
+}
