@@ -15,208 +15,75 @@
     <!-- Custom CSS -->
     <link href="/assets/css/style.css" rel="stylesheet">
 
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    
+
 </head>
 
 <body>
-    <!-- Language Dropdown -->
-    <div id="headerLanguage" class="container d-flex justify-content-end py-2">
-        <div class="dropdown">
-            <button class="btn btn-light dropdown-toggle" type="button" id="languageSwitcher" data-bs-toggle="dropdown">
-                <i class="bi bi-flag-fill me-2"></i> <span id="selectedLang" data-i18n="currentLang">Español</span>
-            </button>
-            <ul class="dropdown-menu" style="z-index: 10000;">
-                <li><a class="dropdown-item change-lang" href="#" data-lang="es"><i class="bi bi-flag-fill me-2"></i>
-                        Español</a></li>
-                <li><a class="dropdown-item change-lang" href="#" data-lang="en"><i class="bi bi-flag-fill me-2"></i>
-                        English</a></li>
-                <li><a class="dropdown-item change-lang" href="#" data-lang="ar"><i class="bi bi-flag-fill me-2"></i>
-                        العربية</a></li>
-                <li><a class="dropdown-item change-lang" href="#" data-lang="it"><i class="bi bi-flag-fill me-2"></i>
-                        Italian</a></li>
-                <li><a class="dropdown-item change-lang" href="#" data-lang="fr"><i class="bi bi-flag-fill me-2"></i>
-                        Frensh</a></li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- Thin Top Header -->
-    <header id="header1" class="top-header text-white py-2 bg-primary">
-        <div class="container d-flex justify-content-between align-items-center">
-            <!-- Left Section -->
-            <div>
-                <div class="d-flex align-items-center mb-1">
-                    <i class="bi bi-telephone me-2"></i>
-                    <span class="clinic-mobile">+34 123456789</span>
-                </div>
-                <div class="d-flex align-items-center">
-                    <i class="bi bi-whatsapp me-2"></i>
-                    <span class="clinic-whatsapp">+34 123456789</span>
-                </div>
-            </div>
-
-            <!-- Right Section -->
-            <div class="text-end">
-                <h5 class="mb-1 hospital-name" data-i18n="hospital_name">Hospital Clinica</h5>
-                <p class="mb-2" data-i18n="tagline">We take care of your back, we improve your life</p>
-                <button class="btn btn-primary btn-book-appointment" data-i18n="book_appointment">
-                    <i class="bi bi-calendar-date me-2"></i>Book an appointment</button>
-            </div>
+    <div class="headerShared"></div>
+    <div class="cookiesShared"></div>
 
 
-        </div>
-    </header>
 
-    <!-- Thin Header -->
-    <header id="header2" class="thin-header another-header bg-light text-dark"
-        style="position: sticky; top: 0; z-index: 1030; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-        <div class="container d-flex align-items-center justify-content-between">
-            <!-- Left Section: Logo and Clinic Name -->
-            <a href="index.html" class="text-decoration-none text-dark">
-                <div class="d-flex align-items-center">
-                    <img src="assets/images/logo.png" alt="Clinic Logo" height="50%" class="me-3 clinic-logo">
-                    <div>
-                        <span class="fw-bold d-block full-name-and-titles" data-i18n="dr_name">
-                            Dr Aaron Hilis MB ChB BSc, MA, FRCS, PhD
-                        </span>
-                        <span class="specialty" data-i18n="profession_title">Spinal Surgeon</span>
+    <!-- Hero Section -->
+    <section id="sectionHero" class="hero-slider">
+
+
+        <div class="appointment-form">
+
+            <!-- Appointment Form Section -->
+            <form id="appointmentForm">
+                <h4 class="text-center mb-4" data-i18n="appointment_schedule">Schedule Your Appointment Now</h2>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="patientName" class="form-label" data-i18n="patient_name">Patient's Name</label>
+                            <input type="text" id="patientName" name="patient_name" class="form-control"
+                                placeholder="Enter patient's name" required>
+                        </div>
+
+
                     </div>
-                </div>
-            </a>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="phoneNumber" class="form-label" data-i18n="phone_number">Phone Number</label>
+                            <input type="text" id="phoneNumber" name="phone_number" class="form-control"
+                                placeholder="Enter phone number" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label" data-i18n="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="example@example.com" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
 
-            <!-- Right Section: Additional Info -->
-            <div class="text-end">
-                <p class="mb-1 fw-bold job-title" data-i18n="consultant_title">Consultant Spine Surgeon</p>
-                <p class="mb-1 additional-degree" data-i18n="degree">Master degree in sport medicine</p>
-                <p class="mb-0 academic-position" data-i18n="role">Associate professor</p>
-            </div>
-        </div>
-    </header>
+                        <div class="col-md-6">
+                            <label for="appointmentDate" class="form-label" data-i18n="appointment_date">Appointment
+                                Date</label>
+                            <input type="date" id="appointmentDate" name="appointment_date" class="form-control"
+                                required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="appointmentTime" class="form-label" data-i18n="appointment_time">Appointment
+                                Time</label>
+                            <select id="appointmentTime" name="appointment_time" class="form-select" required disabled>
+                                <option value="" data-i18n="select_time">Select time</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="appointmentReason" class="form-label" data-i18n="appointment_reason">Reason for
+                                Appointment</label>
+                            <textarea type="text" id="appointmentReason" name="appointment_reason" class="form-control"
+                                placeholder="Enter reason for appointment" required></textarea>
+                        </div>
+                    </div>
 
-   <!-- Menu Bar -->
-<nav id="headerNav" class="menu-bar navbar navbar-expand-lg bg-primary text-white py-0"
-style="position: sticky; top: 100px; z-index: 1020;">
-<div class="container">
-    <div class="d-flex" style="font-size: 1vw;">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <!-- <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link text-white menu-link" href="#" data-i18n="team">Team</a>
-                    <ul class="submenu">
-                        <li><a href="#">Sub-item 1</a></li>
-                        <li><a href="#">Sub-item 2</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link text-white menu-link" href="#" data-i18n="pathologies">Pathologies</a>
-                    <ul class="submenu">
-                        <li><a href="#">Sub-item 1</a></li>
-                        <li><a href="#">Sub-item 2</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link text-white menu-link" href="#" data-i18n="treatments">Treatments</a>
-                    <ul class="submenu">
-                        <li><a href="#">Sub-item 1</a></li>
-                        <li><a href="#">Sub-item 2</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link text-white menu-link" href="#" data-i18n="medical_legal_expertise">Medical-Legal Expertise</a>
-                    <ul class="submenu">
-                        <li><a href="#">Sub-item 1</a></li>
-                        <li><a href="#">Sub-item 2</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link text-white menu-link" href="#" data-i18n="information_and_advice">Information & Advice</a>
-                    <ul class="submenu">
-                        <li><a href="#">Sub-item 1</a></li>
-                        <li><a href="#">Sub-item 2</a></li>
-                    </ul>
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link text-white menu-link" href="#" data-i18n="contact">Contact</a>
-                </li>
-            </ul> -->
-            <ul class="navbar-nav" id="sectionsList">
-                <!-- سيتم ملء هذا القسم ديناميكياً باستخدام الجافا سكريبت -->
-            </ul>
-        </div>
-    </div>
-    <div class="ms-auto" id="userNav">
-        <span id="userName1" class="navbar-text me-3"></span>
-        <a href="user-dashboard" class="btn btn-outline-light me-2" id="dashboardLink" style="display: none;"
-            data-i18n="dashboard">Dashboard</a>
-        <button class="btn btn-outline-light me-2" id="logoutBtn" style="display: none;"
-            data-i18n="logout">Logout</button>
-        <a href="login.html" class="btn btn-outline-light me-2" id="loginLink" data-i18n="login">Login</a>
-        <a href="signup.html" class="btn btn-light" id="signupLink" data-i18n="signup">Sign Up</a>
-    </div>
-</div>
-</nav>
- <!-- Hero Section -->
- <section id="sectionHero" class="hero-slider">
-        
-
-    <div class="appointment-form"> 
-
-        <!-- Appointment Form Section -->
-        <form id="appointmentForm">
-            <h4 class="text-center mb-4" data-i18n="appointment_schedule">Schedule Your Appointment Now</h2>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="patientName" class="form-label" data-i18n="patient_name">Patient's Name</label>
-                    <input type="text" id="patientName" name="patient_name" class="form-control"
-                        placeholder="Enter patient's name" required>
-                </div>
-                
-                
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="phoneNumber" class="form-label" data-i18n="phone_number">Phone Number</label>
-                    <input type="text" id="phoneNumber" name="phone_number" class="form-control"
-                        placeholder="Enter phone number" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="email" class="form-label" data-i18n="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-control"
-                        placeholder="example@example.com" required>
-                </div>
-            </div>
-            <div class="row mb-3">
-               
-                <div class="col-md-6">
-                    <label for="appointmentDate" class="form-label" data-i18n="appointment_date">Appointment
-                        Date</label>
-                    <input type="date" id="appointmentDate" name="appointment_date" class="form-control" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="appointmentTime" class="form-label" data-i18n="appointment_time">Appointment
-                        Time</label>
-                    <select id="appointmentTime" name="appointment_time" class="form-select" required disabled>
-                        <option value="" data-i18n="select_time">Select time</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <label for="appointmentReason" class="form-label" data-i18n="appointment_reason">Reason for
-                        Appointment</label>
-                    <textarea type="text" id="appointmentReason" name="appointment_reason" class="form-control"
-                        placeholder="Enter reason for appointment" required></textarea>
-                </div>
-            </div>
-           
-            <!-- <div class="row mb-3">
+                    <!-- <div class="row mb-3">
                 <div class="col-md-12">
                     <div class="form-check">
                         <input type="checkbox" id="agreeToTerms" name="agree_to_terms" class="form-check-input"
@@ -228,109 +95,113 @@ style="position: sticky; top: 100px; z-index: 1020;">
             </div> -->
 
 
-            <div class="row mb-3">
-                <div class="col-md-12">
-                    <div class="form-check">
-                        <input type="checkbox" id="agreeToTerms" name="agree_to_terms" class="form-check-input" required>
-                        <label for="agreeToTerms" class="form-check-label">
-                            I agree to the
-                            <a href="#" class="text-primary text-decoration-underline" data-bs-toggle="modal" data-bs-target="#termsModal" data-i18n="terms">terms</a>
-                            and
-                            <a href="#" class="text-primary text-decoration-underline" data-bs-toggle="modal" data-bs-target="#conditionsModal" data-i18n="conditions">conditions</a>.
-                        </label>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <div class="form-check">
+                                <input type="checkbox" id="agreeToTerms" name="agree_to_terms" class="form-check-input"
+                                    required>
+                                <label for="agreeToTerms" class="form-check-label">
+                                    I agree to the
+                                    <a href="#" class="text-primary text-decoration-underline" data-bs-toggle="modal"
+                                        data-bs-target="#termsModal" data-i18n="terms">terms</a>
+                                    and
+                                    <a href="#" class="text-primary text-decoration-underline" data-bs-toggle="modal"
+                                        data-bs-target="#conditionsModal" data-i18n="conditions">conditions</a>.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary w-100" data-i18n="book_appointment">Book
+                        Appointment</button>
+            </form>
+
+
+        </div>
+
+        <!-- Modal for Terms -->
+        <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" width="100%" style="max-width: 1000px !important;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- ضع هنا نص الشروط -->
+                        Here are the terms of service...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for Conditions -->
+        <div class="modal fade" id="conditionsModal" tabindex="-1" aria-labelledby="conditionsModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" width="100%" style="max-width: 1000px !important;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="conditionsModalLabel">Conditions</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- ضع هنا نص الشروط -->
+                        Here are the conditions...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active"
+                    style="background-image: url('https://res.cloudinary.com/dheh8ee3r/image/upload/v1738760173/golf_kt4o3t.jpg'); background-size: cover; background-position: center; height: 75vh;">
+                    <div class="carousel-caption text-start text-white">
+                        <h1 data-i18n="carousel_welcome">Welcome to Our Clinic</h1>
+                        <p data-i18n="carousel_description">We offer high-quality medical care in all specialties.</p>
+                        <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item"
+                    style="background-image: url('../assets/images/tennis.jpg'); background-size: cover; background-position: center; height: 75vh;">
+                    <div class="carousel-caption text-start text-white">
+                        <h1 data-i18n="carousel_best_medical_care">The Best Medical Care</h1>
+                        <p data-i18n="carousel_team_assistance">Our team of doctors is ready to assist you.</p>
+                        <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item"
+                    style="background-image: url('../assets/images/yoga.jpg'); background-size: cover; background-position: center; height: 75vh;">
+                    <div class="carousel-caption text-start text-white">
+                        <h1 data-i18n="carousel_comprehensive_sections">Comprehensive Medical Sections</h1>
+                        <p data-i18n="carousel_high_quality_healthcare">High-quality healthcare in a comfortable and
+                            safe environment.</p>
+                        <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
                     </div>
                 </div>
             </div>
 
-
-
-            <button type="submit" class="btn btn-primary w-100" data-i18n="book_appointment">Book
-                Appointment</button>
-        </form>
-
-
-    </div>
-
-<!-- Modal for Terms -->
-<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
-<div class="modal-dialog" width="100%" style="max-width: 1000px !important;">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="termsModalLabel">Terms of Service</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <div class="modal-body">
-            <!-- ضع هنا نص الشروط -->
-            Here are the terms of service...
-        </div>
-    </div>
-</div>
-</div>
-
-<!-- Modal for Conditions -->
-<div class="modal fade" id="conditionsModal" tabindex="-1" aria-labelledby="conditionsModalLabel" aria-hidden="true">
-<div class="modal-dialog" width="100%" style="max-width: 1000px !important;">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="conditionsModalLabel">Conditions</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <!-- ضع هنا نص الشروط -->
-            Here are the conditions...
-        </div>
-    </div>
-</div>
-</div>
-
-
-
-
-
-
-    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active"
-                style="background-image: url('https://res.cloudinary.com/dheh8ee3r/image/upload/v1738760173/golf_kt4o3t.jpg'); background-size: cover; background-position: center; height: 75vh;">
-                <div class="carousel-caption text-start text-white">
-                    <h1 data-i18n="carousel_welcome">Welcome to Our Clinic</h1>
-                    <p data-i18n="carousel_description">We offer high-quality medical care in all specialties.</p>
-                    <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
-                </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="carousel-item"
-                style="background-image: url('../assets/images/tennis.jpg'); background-size: cover; background-position: center; height: 75vh;">
-                <div class="carousel-caption text-start text-white">
-                    <h1 data-i18n="carousel_best_medical_care">The Best Medical Care</h1>
-                    <p data-i18n="carousel_team_assistance">Our team of doctors is ready to assist you.</p>
-                    <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
-                </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="carousel-item"
-                style="background-image: url('../assets/images/yoga.jpg'); background-size: cover; background-position: center; height: 75vh;">
-                <div class="carousel-caption text-start text-white">
-                    <h1 data-i18n="carousel_comprehensive_sections">Comprehensive Medical Sections</h1>
-                    <p data-i18n="carousel_high_quality_healthcare">High-quality healthcare in a comfortable and
-                        safe environment.</p>
-                    <a href="#" class="btn btn-primary" data-i18n="read_more">Read More</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carousel Controls -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</section>
+    </section>
 
 
     <!-- About -->
@@ -416,105 +287,10 @@ style="position: sticky; top: 100px; z-index: 1020;">
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="Footer" class="bg-dark text-white pt-5 pb-3">
-        <div class="container">
-            <div class="row">
-                <!-- Contact Information -->
-                <div class="col-md-4 mb-4">
-                    <h5 data-i18n="contact_us">Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li class="clinic-mobile contact-telephone">Tel: 946 941 347</li>
-                        <li class="clinic-mobile">Mobile: 696 13 25 38</li>
-                        <li class="clinic-email">Email: <a href="mailto:info@hilisclinic.com"
-                                class="text-white">info@hilisclinic.com</a></li>
-                    </ul>
-                    <!-- Social Media Links -->
-                    <div class="social-icons mt-3">
-                        <a href="#" class="clinic-facebook text-white me-3"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="clinic-instagram text-white me-3"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="clinic-twitter text-white"><i class="bi bi-twitter"></i></a>
-                    </div>
-                </div>
-
-                <!-- Navigation Links -->
-                <div class="col-md-4 mb-4">
-                    <h5 data-i18n="links">Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white" data-i18n="team">Team</a></li>
-                        <li><a href="#" class="text-white" data-i18n="conditions">Conditions</a></li>
-                        <li><a href="#" class="text-white" data-i18n="treatments">Treatments</a></li>
-                        <li><a href="#" class="text-white" data-i18n="medical_legal_expertise">Medical-Legal
-                                Expertise</a></li>
-                        <li><a href="#" class="text-white" data-i18n="contact">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Logo and Legal Links -->
-                <div class="col-md-4 mb-4 text-center">
-                    <img src="assets/images/cicco.png" alt="CICCO Logo" class="mb-3" style="max-height: 33%;">
-                    <p data-i18n="all_rights_reserved">All rights reserved</p>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#" class="text-white" data-i18n="legal_notice">Legal
-                                Notice</a></li>
-                        <li class="list-inline-item"><a href="#" class="text-white" data-i18n="privacy_policy">Privacy
-                                Policy</a></li>
-                        <li class="list-inline-item"><a href="#" class="text-white" data-i18n="cookie_policy">Cookie
-                                Policy</a></li>
-
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Map and Newsletter -->
-            <div class="row mt-4">
-                <!-- Map -->
-                <div class="col-md-6 mb-4">
-                    <h5 data-i18n="location">Location</h5>
-                    <div id="map" style="height: 200px; background-color: #f8f9fa;">
-                        <!-- You can replace the link with your custom Google Maps link -->
-                        <iframe class="clinic-location" allowfullscreen="" loading="lazy"
-                            src="https://www.google.com/maps/embed?pb=!1m19!1m8!1m3!1d49636.72909420046!2d-5.8685312!3d38.9629185!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0xd145bcdd571060d%3A0x8672ee7b973dac1e!2s06400%20Don%20Benito%2C%20Badajoz%2C%20Spain!3m2!1d38.962859!2d-5.827331699999999!5e0!3m2!1sen!2sjo!4v1742650716397!5m2!1sen!2sjo"
-                            width="100%" height="300" style="border:0; height: 100% !important;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="col-md-6 mb-4">
-                    <h5 data-i18n="subscribe_newsletter">Subscribe to our Newsletter</h5>
-                    <form>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary secondery"
-                            data-i18n="subscribe_button">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Reviews -->
-            <!-- <div class="row mt-4 text-center">
-                <div class="col">
-                    <a href="https://www.google.com/maps/place/..." class="btn btn-light" target="_blank">
-                        <i class="bi bi-star-fill text-warning me-2"></i><span data-i18n="google_reviews">See our reviews on Google</span>
-                    </a>
-                </div>
-            </div> -->
-
-            <!-- Copyright -->
-            <div class="row mt-4">
-                <div class="col text-center">
-                    <p class="mb-0 clinic-copyright" data-i18n="copyright">&copy; 2025 Biziondo. All rights reserved.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer Section -->
+    <div class="footerShared"></div>
 
     <!-- Files -->
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/libs/i18next/i18next.min.js"></script>
     <script src="assets/libs/i18next/i18nextBrowserLanguageDetector.min.js"></script>
@@ -525,54 +301,8 @@ style="position: sticky; top: 100px; z-index: 1020;">
     <script src="assets/js/app.js"></script>
     <script src="assets/js/api.js"></script>
     <script src="assets/js/script.js"></script>
-<!-- 
-    <script>
-        $(document).ready(function () {
-            // دالة للبحث عن الأقسام وعرضها في الـ Navbar
-            function loadSections() {
-                $.get(`${API_BASE_URL}/newsection/nav/section`, function (sections) {
-                    // تحديث navbar بالبيانات المأخوذة من الـ backend
-                    if (sections && Array.isArray(sections)) {
-                        const navList = $('#sectionsList');
-                        
-                        sections.forEach(section => {
-                            const sectionTitle = section.title.es; // العنوان بالـ إسباني
-                            const categories = section.categories;
-    
-                            // إضافة قسم جديد
-                            const sectionItem = `
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link text-white dropdown-toggle" href="#" role="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                        ${sectionTitle}
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        ${categories.map(cat => `
-                                            <li><a class="dropdown-item category-link" href="#" data-section-id="${section.sectionId}" data-category-id="${cat.categoryId}">${cat.title.es}</a></li>
-                                        `).join('')}
-                                    </ul>
-                                </li>
-                            `;
-                            navList.append(sectionItem);
-                        });
-    
-                        // عندما ينقر المستخدم على فئة، انتقل إلى صفحة الفئة
-                        $('.category-link').click(function (e) {
-                            e.preventDefault();
-                            const sectionId = $(this).data('section-id');
-                            const categoryId = $(this).data('category-id');
-
-                            // window.location.href = `/category/${categoryId}`;
-                            // window.location.href = `subcategory.html?sectionId=${sectionId}&categoryId=${categoryId}`;
-                        });
-                    }
-                }).fail(function () {
-                    console.error("Error loading sections.");
-                });
-            }
-    
-            loadSections(); // تحميل الأقسام عند تحميل الصفحة
-        });
-    </script> -->
+    <script src="assets/js/cookies.js"></script>
+   
 </body>
 
 </html>

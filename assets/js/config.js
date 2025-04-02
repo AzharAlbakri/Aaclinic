@@ -1,9 +1,26 @@
 // URL الأساسي للسيرفر
-// const API_BASE_URL = "http://localhost:3000";
-const API_BASE_URL = 'https://user-api-server.onrender.com';
+const API_BASE_URL = "http://localhost:3000";
+// const API_BASE_URL = 'https://user-api-server.onrender.com';
 
 $(document).ready(function () {
+    $(".headerShared").load("/header.html", function () {
+        console.log("✅ الهيدر تم تحميله.");
+
+        $(".headerShared").css({
+            // "position": "sticky",
+            // "top": "0",
+            "z-index": "200",
+            "min-height": "60px"
+        });
+        runApp(); // تشغيل `app.js` بعد تحميل الهيدر
+    });
     $(".consultationFormShared").load("/consultation-form.html");
+    $(".cookiesShared").load("/cookies-banner.html");
+    $(".footerShared").load("/footer.html");
+
+
+
+
     $("#sectionAbout").hide();
     $("#sectionAppointment").hide();
     $(".consultation-form").hide();
@@ -146,6 +163,34 @@ function updateLanguageButton(selectedLang) {
     $("#selectedLang").text(langText[selectedLang] || "Espanol");
 }
 
+function autoTranslation(selectedLang) {
+    alert("Auto translation started for language: " + selectedLang);
+    var targetLang = selectedLang;
+
+    $(".translatable").each(function () {
+        var element = $(this);
+        var originalText = element.text();
+
+        $.ajax({
+            url: "https://libretranslate.de/translate",
+            type: "POST",
+            data: {
+                q: originalText,
+                source: "auto",
+                target: targetLang,
+                format: "text",
+                api_key: "" // قد تحتاج مفتاح API إذا كان الخادم يطلب ذلك
+            },
+            success: function (response) {
+                element.text(response.translatedText);
+            },
+            error: function (error) {
+                console.error("خطأ في الترجمة:", error);
+            }
+        });
+    });
+}
+
 function setupEventListeners() {
     $(document).on("click", ".change-lang", function (e) {
         e.preventDefault();
@@ -166,6 +211,7 @@ function changeLanguage(selectedLang) {
     i18next.changeLanguage(selectedLang, function (err) {
         if (err) return console.error("Error changing language:", err);
         updateContent();
+        autoTranslation(selectedLang);
         updateLanguageButton(selectedLang);
         localStorage.setItem("selectedLang", selectedLang);
     });

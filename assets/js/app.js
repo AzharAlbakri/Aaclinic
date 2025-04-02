@@ -313,7 +313,52 @@ function renderSections(sections) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
+
+//   // Check if user data exists in localStorage
+//   const userName = localStorage.getItem('userName');
+
+//   if (userName) {
+//     // Display user name and dashboard link
+
+//     let welcomeText = i18next.t('user_welcome');
+//     console.log("test", welcomeText);
+//     if (welcomeText === 'user_welcome') {
+//       document.getElementById('userName').textContent = `${welcomeText}, ${userName}`;
+
+
+//     } else {
+//       document.getElementById('userName').textContent = `Welcome, ${userName}`;
+
+//     }
+
+
+//     document.getElementById('dashboardLink').style.display = 'inline-block';
+//     document.getElementById('logoutBtn').style.display = 'inline-block';
+
+//     // Hide login and signup buttons
+//     document.getElementById('loginLink').style.display = 'none';
+//     document.getElementById('signupLink').style.display = 'none';
+//   }
+
+//   // Handle logout
+//   const logoutBtn = document.getElementById('logoutBtn');
+//   if (logoutBtn) {
+//     logoutBtn.addEventListener('click', function () {
+//       // Clear user data from localStorage
+//       localStorage.removeItem('userName');
+//       localStorage.removeItem('userEmail');
+//       localStorage.removeItem('token');
+
+//       // Redirect to homepage or login page
+//       window.location.href = 'index';
+//     });
+//   }
+// });
+
+function runApp() {
+ 
+  // document.addEventListener("DOMContentLoaded", function () {
 
   // Check if user data exists in localStorage
   const userName = localStorage.getItem('userName');
@@ -321,17 +366,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (userName) {
     // Display user name and dashboard link
 
-    let welcomeText = i18next.t('user_welcome');
-    console.log("test", welcomeText);
-    if (welcomeText === 'user_welcome') {
-      document.getElementById('userName').textContent = `${welcomeText}, ${userName}`;
-
-
-    } else {
-      document.getElementById('userName').textContent = `Welcome, ${userName}`;
-
-    }
-
+    // let welcomeText = i18next.t('user_welcome');
+    // if (welcomeText === 'user_welcome') {
+    //   document.getElementById('userName').textContent = `${welcomeText}, ${userName}`;
+    // } else {
+    //   document.getElementById('userName').textContent = `Welcome, ${userName}`;
+    // }
 
     document.getElementById('dashboardLink').style.display = 'inline-block';
     document.getElementById('logoutBtn').style.display = 'inline-block';
@@ -354,4 +394,5 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.href = 'index';
     });
   }
-});
+  // });
+}

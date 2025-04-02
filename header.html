@@ -1,0 +1,142 @@
+
+    <!-- Language Dropdown -->
+    <div id="headerLanguage" class="container d-flex justify-content-end py-2">
+        <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="languageSwitcher" data-bs-toggle="dropdown">
+                <i class="bi bi-flag-fill me-2"></i> <span id="selectedLang" data-i18n="currentLang">Español</span>
+            </button>
+            <ul class="dropdown-menu" style="z-index: 10000;">
+                <li><a class="dropdown-item change-lang" href="#" data-lang="es"><i class="bi bi-flag-fill me-2"></i>
+                        Español</a></li>
+                <li><a class="dropdown-item change-lang" href="#" data-lang="en"><i class="bi bi-flag-fill me-2"></i>
+                        English</a></li>
+                <li><a class="dropdown-item change-lang" href="#" data-lang="ar"><i class="bi bi-flag-fill me-2"></i>
+                        العربية</a></li>
+                <li><a class="dropdown-item change-lang" href="#" data-lang="it"><i class="bi bi-flag-fill me-2"></i>
+                        Italian</a></li>
+                <li><a class="dropdown-item change-lang" href="#" data-lang="fr"><i class="bi bi-flag-fill me-2"></i>
+                        Frensh</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Thin Top Header -->
+    <header id="header1" class="top-header text-white py-2 bg-primary">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Left Section -->
+            <div>
+                <div class="d-flex align-items-center mb-1">
+                    <i class="bi bi-telephone me-2"></i>
+                    <span class="clinic-mobile">+34 123456789</span>
+                </div>
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-whatsapp me-2"></i>
+                    <span class="clinic-whatsapp">+34 123456789</span>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="text-end">
+                <h5 class="mb-1 hospital-name" data-i18n="hospital_name">Hospital Clinica</h5>
+                <p class="mb-2" data-i18n="tagline">We take care of your back, we improve your life</p>
+                <button class="btn btn-primary btn-book-appointment" data-i18n="book_appointment">
+                    <i class="bi bi-calendar-date me-2"></i>Book an appointment</button>
+            </div>
+
+
+        </div>
+    </header>
+
+    <!-- Thin Header -->
+    <header id="header2" class="thin-header another-header bg-light text-dark"
+        style="position: sticky; top: 0; z-index: 1030; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
+        <div class="container d-flex align-items-center justify-content-between">
+            <!-- Left Section: Logo and Clinic Name -->
+            <a href="index.html" class="text-decoration-none text-dark">
+                <div class="d-flex align-items-center">
+                    <img src="assets/images/logo.png" alt="Clinic Logo" height="50%" class="me-3 clinic-logo">
+                    <div>
+                        <span class="fw-bold d-block full-name-and-titles" data-i18n="dr_name">
+                            Dr Aaron Hilis MB ChB BSc, MA, FRCS, PhD
+                        </span>
+                        <span class="specialty" data-i18n="profession_title">Spinal Surgeon</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Right Section: Additional Info -->
+            <div class="text-end">
+                <p class="mb-1 fw-bold job-title" data-i18n="consultant_title">Consultant Spine Surgeon</p>
+                <p class="mb-1 additional-degree" data-i18n="degree">Master degree in sport medicine</p>
+                <p class="mb-0 academic-position" data-i18n="role">Associate professor</p>
+            </div>
+        </div>
+    </header>
+
+   <!-- Menu Bar -->
+<nav id="headerNav" class="menu-bar navbar navbar-expand-lg bg-primary text-white py-0"
+style="position: sticky; top: 100px; z-index: 1020;">
+<div class="container">
+    <div class="d-flex" style="font-size: 1vw;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white menu-link" href="#" data-i18n="team">Team</a>
+                    <ul class="submenu">
+                        <li><a href="#">Sub-item 1</a></li>
+                        <li><a href="#">Sub-item 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white menu-link" href="#" data-i18n="pathologies">Pathologies</a>
+                    <ul class="submenu">
+                        <li><a href="#">Sub-item 1</a></li>
+                        <li><a href="#">Sub-item 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white menu-link" href="#" data-i18n="treatments">Treatments</a>
+                    <ul class="submenu">
+                        <li><a href="#">Sub-item 1</a></li>
+                        <li><a href="#">Sub-item 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white menu-link" href="#" data-i18n="medical_legal_expertise">Medical-Legal Expertise</a>
+                    <ul class="submenu">
+                        <li><a href="#">Sub-item 1</a></li>
+                        <li><a href="#">Sub-item 2</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white menu-link" href="#" data-i18n="information_and_advice">Information & Advice</a>
+                    <ul class="submenu">
+                        <li><a href="#">Sub-item 1</a></li>
+                        <li><a href="#">Sub-item 2</a></li>
+                    </ul>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link text-white menu-link" href="#" data-i18n="contact">Contact</a>
+                </li>
+            </ul> -->
+            <ul class="navbar-nav" id="sectionsList">
+                <!-- سيتم ملء هذا القسم ديناميكياً باستخدام الجافا سكريبت -->
+            </ul>
+        </div>
+    </div>
+    <div class="ms-auto" id="userNav">
+        <span id="userName" class="navbar-text me-3"></span>
+        <a href="user-dashboard" class="btn btn-outline-light me-2" id="dashboardLink" style="display: none;"
+            data-i18n="dashboard">Dashboard</a>
+        <button class="btn btn-outline-light me-2" id="logoutBtn" style="display: none;"
+            data-i18n="logout">Logout</button>
+        <a href="login.html" class="btn btn-outline-light me-2" id="loginLink" data-i18n="login">Login</a>
+        <a href="signup.html" class="btn btn-light" id="signupLink" data-i18n="signup">Sign Up</a>
+    </div>
+</div>
+</nav>
